@@ -1,0 +1,31 @@
+package htmlinput1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class amazonNewAccount {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.gecko.driver", "E:\\Softwares\\selenium\\jar\\geckodriver.exe");
+
+		WebDriver driver=new FirefoxDriver();
+		
+		driver.get("https://www.amazon.in/ap/register?showRememberMe=true&openid.pape.max_auth_age=0&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&pageId=inflex&ignoreAuthState=1&openid.return_to=https%3A%2F%2Fwww.amazon.in%2F%3Fref_%3Dnav_signin&prevRID=RHFG93Q6VS833CZMS6HX&openid.assoc_handle=inflex&openid.mode=checkid_setup&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&prepopulatedLoginId=&failedSignInCount=0&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0");
+		
+		driver.findElement(By.cssSelector("input[id='ap_customer_name']")).sendKeys("madanlal");
+		
+		driver.findElement(By.cssSelector("input[id='ap_phone_number']")).sendKeys("1234");
+		
+		driver.findElement(By.cssSelector("input[id='ap_email']")).sendKeys("@gmail");
+		
+		driver.findElement(By.cssSelector("input[id='ap_password']")).sendKeys("ganpat");
+		
+		Thread.sleep(2500);
+		
+		driver.findElement(By.id("continue")).click();
+
+	}
+
+}

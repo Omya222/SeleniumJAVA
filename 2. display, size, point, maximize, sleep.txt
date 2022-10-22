@@ -1,0 +1,78 @@
+package firefoxscript;
+
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class string {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.gecko.driver", "E:\\Softwares\\selenium\\jar\\geckodriver.exe");
+
+		WebDriver driver=new FirefoxDriver();
+		
+		driver.get("https://www.google.com/");
+		
+		driver.navigate().to("https://www.facebook.com/");
+		
+		driver.navigate().back();
+		
+		Thread.sleep(3500);
+		
+		String title = driver.getTitle(); 
+		
+		if(title.contains("Google")) 
+		{
+			System.out.println("google page displayed");
+		}
+		else
+		 {
+			 System.out.println("google page not displayed");
+		 }
+		
+	     {
+		
+		Thread.sleep(3500);
+		
+		Dimension d = new Dimension(500,400);
+		
+		driver.manage().window().setSize(d);
+		
+		Point P = new Point(250,400);
+		
+		driver.manage().window().setPosition(P);
+		
+		Thread.sleep(3000);
+		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(3000);
+		
+		}
+	   
+	    driver.navigate().forward();
+	    
+	    String title1 = driver.getTitle(); 
+		
+		if(title1.contains("Facebook")) 
+		{
+			System.out.println("facebook page displayed");
+		}
+		else
+		 {
+			 System.out.println("facebook page not displayed");
+		 }
+		
+		Thread.sleep(2000);
+		
+		driver.navigate().refresh();
+		
+		driver.quit();
+	     
+	}
+	
+}
+		
+		

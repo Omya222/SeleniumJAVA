@@ -1,0 +1,26 @@
+package firefoxscript;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class chrome 
+ {
+
+  public static void main(String[] args) throws InterruptedException {
+
+       System.setProperty("webdriver.chrome.driver", "E:\\Softwares\\selenium\\jar\\chromedriver.exe");
+       WebDriver driver = new ChromeDriver();
+
+
+    driver.get("http://www.google.com");
+    
+    driver.navigate().to("https://www.facebook.com/");
+    
+	Thread.sleep(1500);
+    
+	driver.navigate().back();
+	
+
+  }
+
+ }

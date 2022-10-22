@@ -1,0 +1,34 @@
+package htmlinput1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class xpath1 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.gecko.driver", "E:\\Softwares\\selenium\\jar\\geckodriver.exe");
+
+		WebDriver driver=new FirefoxDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		driver.findElement(By.xpath("//input[@name='email']")).sendKeys("9028248134");
+		
+		driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("pass here");
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//input[@value='Log In']")).click();
+		
+		Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//div[@id='userNavigationLabel']")).click();
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//li[@class='_54ni navSubmenu _6398 _64kz __MenuItem']")).click();
+		
+	}
+}

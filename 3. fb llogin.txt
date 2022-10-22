@@ -1,0 +1,38 @@
+package htmlinput1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class fbLogin {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.gecko.driver", "E:\\Softwares\\selenium\\jar\\geckodriver.exe");
+
+		WebDriver driver=new FirefoxDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		Thread.sleep(100);
+		
+		By by = By.id("email");
+		
+		WebElement ele = driver.findElement(by);
+		
+		ele.sendKeys("9028248134");
+		
+		By by1 = By.id("pass");
+		
+		WebElement ele1 = driver.findElement(by1);
+		
+		ele1.sendKeys("password here");
+		
+		Thread.sleep(2500);
+		
+		driver.findElement(By.id("u_0_8")).click();
+		
+	}
+
+}
